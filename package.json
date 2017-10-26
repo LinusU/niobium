@@ -1,0 +1,22 @@
+{
+  "name": "niobium",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "LinusU/niobium",
+  "bin": "bin.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.140.0",
+    "globby": "^6.1.0",
+    "got": "^7.1.0",
+    "neodoc": "^1.4.0",
+    "ora": "^1.3.0",
+    "proxyquire": "^1.8.0",
+    "rev-hash": "^2.0.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
