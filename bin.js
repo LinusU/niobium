@@ -16,7 +16,7 @@ const usage = `
 Niobium
 
 Usage:
-  niobium --s3-bucket=<bucket> --cloudfront-distribution-id=<distribution-id>
+  niobium --s3-bucket=<bucket> [--cloudfront-distribution-id=<distribution-id>]
 
 Options:
   --s3-bucket                    Name of the S3 bucket in which to put the files.
@@ -214,9 +214,11 @@ async function main () {
         }
         spinner.succeed(`Uploading changed files (${uploadedFiles}/${changedFiles.size})`)
 
-        spinner.start('Invalidating CloudFront cache')
-        await invalidateRotues(args['--cloudfront-distribution-id'], [...changedFiles.keys()])
-        spinner.succeed()
+        if (args['--cloudfront-distribution-id']) {
+          spinner.start('Invalidating CloudFront cache')
+          await invalidateRotues(args['--cloudfront-distribution-id'], [...changedFiles.keys()])
+          spinner.succeed()
+        }
       }
     } finally {
       await closeServer()
