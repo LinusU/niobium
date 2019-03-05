@@ -8,7 +8,7 @@
     "test": "standard"
   },
   "dependencies": {
-    "aws-sdk": "^2.140.0",
+    "aws-sdk": "^2.414.0",
     "globby": "^6.1.0",
     "got": "^7.1.0",
     "neodoc": "^1.4.0",
